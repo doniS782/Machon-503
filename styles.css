@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #071629;
+    background: white;
+    overflow-x: hidden;
+}
+
+header {
+    height: 75px;
+    background: #071629;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #147de0;
+}
+
+.pagina {
+    display: none;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+/* PORTADA */
+.portada {
+    width: 100%;
+    height: calc(100vh - 75px);
+    overflow: hidden;
+}
+
+.portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* TÍTULOS */
+.titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    color: #777;
+}
+
+/* UNIFORMES */
+.catalogo {
+    padding: 55px 7%;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.producto {
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    padding-bottom: 22px;
+    background: white;
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+.producto img {
+    width: 100%;
+    height: 270px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+
+.producto h2 {
+    font-size: 18px;
+    margin: 18px 5px 12px;
+}
+
+.producto p {
+    color: #666;
+    font-size: 13px;
+    margin: 8px;
+}
+
+.precio {
+    color: #147de0 !important;
+    font-size: 19px !important;
+    font-weight: bold;
+}
+
+.producto button {
+    background: #071629;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.producto button:hover {
+    background: #147de0;
+}
+
+/* ZAPATOS */
+.zapatos {
+    padding: 40px 4% 60px;
+    min-height: calc(100vh - 75px);
+}
+
+.carrito {
+    background: #147de0;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    width: fit-content;
+    margin: 0 0 25px auto;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+#contador {
+    background: #e53935;
+    padding: 3px 8px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+/* MARCAS */
+.marcas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.marca {
+    min-height: 200px;
+    border: 1px solid #d8deea;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+}
+
+.marca:hover {
+    border-color: #147de0;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.marca h2 {
+    font-size: 27px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.marca p {
+    color: #555;
+}
+
+/* MODELOS */
+.encabezado-marca {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.encabezado-marca h2 {
+    font-size: 28px;
+}
+
+.encabezado-marca p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.volver {
+    background: #147de0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.lista-zapatos {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.zapato-card {
+    background: white;
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.zapato-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.zapato-card h3 {
+    font-size: 16px;
+    margin-top: 14px;
+}
+
+.zapato-card .precio {
+    text-align: left;
+    margin: 5px 0 12px;
+}
+
+.zapato-card label {
+    display: block;
+    color: #666;
+    font-size: 13px;
+    margin: 10px 0 5px;
+}
+
+.zapato-card select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+}
+
+.zapato-card button {
+    width: 100%;
+    background: #147de0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.zapato-card button:hover {
+    background: #071629;
+}
+
+/* CARRITO Y COMPRA */
+.panel-compra {
+    display: none;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 25px;
+    border: 1px solid #e2e7ee;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.panel-compra h2 {
+    margin-bottom: 20px;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-carrito p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.item-carrito button {
+    border: none;
+    background: #e53935;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total-compra {
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 22px 0;
+}
+
+.boton-compra {
+    background: #071629;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 22px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.boton-compra:hover {
+    background: #147de0;
+}
+
+.formulario-compra {
+    display: none;
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 25px;
+    border: 1px solid #e2e7ee;
+    border-radius: 14px;
+}
+
+.formulario-compra label {
+    display: block;
+    margin: 14px 0 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.formulario-compra input,
+.formulario-compra textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd3dd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.formulario-compra textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.opcion-pago {
+    border: 1px solid #147de0;
+    border-radius: 9px;
+    padding: 17px;
+    margin-top: 20px;
+    background: #f4f8ff;
+}
+
+.aviso-pago {
+    color: #76520a;
+    background: #fff4d6;
+    padding: 13px;
+    border-radius: 7px;
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* CONTACTO */
+.contacto {
+    background: #071629;
+    color: white;
+    padding: 48px 7% 28px;
+    margin-top: 65px;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 23px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.contacto .descripcion {
+    color: #b9c5d5;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.contacto-datos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contacto-datos a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #34465d;
+    border-radius: 6px;
+    padding: 17px 22px;
+    min-width: 210px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.contacto-datos a:hover {
+    border-color: #147de0;
+    background: #102b4b;
+}
+
+.contacto-datos strong {
+    display: block;
+    color: #8bbfff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.pie {
+    border-top: 1px solid #34465d;
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #aebaca;
+    font-size: 12px;
+}
+
+/* CELULARES */
+@media (max-width: 1100px) {
+    .lista-zapatos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 4%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .producto img {
+        height: 190px;
+    }
+
+    .marcas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .marca {
+        min-height: 150px;
+    }
+
+    .marca h2 {
+        font-size: 20px;
+    }
+
+    .lista-zapatos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .zapato-card img {
+        height: 160px;
+    }
+
+    .encabezado-marca {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .contacto-datos a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .item-carrito {
+        flex-wrap: wrap;
+    }
+}
